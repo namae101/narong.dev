@@ -7,29 +7,29 @@ import type { CollectionEntry } from 'astro:content'
 import SocialIcons from './SocialIcons.astro'
 
 interface Props {
-  author: CollectionEntry<'authors'>
+  about: CollectionEntry<'about'>
 }
 
-const { author } = Astro.props
-const { name, avatar, bio, pronouns } = author.data
+const { about } = Astro.props
+const { name, avatar, bio, pronouns } = about.data
 const currentPath = Astro.url.pathname
-const isAuthorPage = currentPath === `/authors/${author.id}`
+const isAuthorPage = currentPath === `/authors/${about.id}`
 
 const socialLinks: SocialLink[] = [
-  author.data.website && { href: author.data.website, label: 'Website' },
-  author.data.github && { href: author.data.github, label: 'GitHub' },
-  author.data.twitter && { href: author.data.twitter, label: 'Twitter' },
-  author.data.linkedin && { href: author.data.linkedin, label: 'LinkedIn' },
-  author.data.mail && { href: `mailto:${author.data.mail}`, label: 'Email' },
+  about.data.website && { href: about.data.website, label: 'Website' },
+  about.data.github && { href: about.data.github, label: 'GitHub' },
+  about.data.twitter && { href: about.data.twitter, label: 'Twitter' },
+  about.data.linkedin && { href: about.data.linkedin, label: 'LinkedIn' },
+  about.data.mail && { href: `mailto:${about.data.mail}`, label: 'Email' },
 ].filter(Boolean) as SocialLink[]
 ---
 
 <div
   class="has-[a:hover]:bg-secondary/50 overflow-hidden rounded-xl border p-4 transition-colors duration-300 ease-in-out"
 >
-  <div class="flex flex-wrap gap-4">
+  <div class="flex flex-row gap-4">
     <Link
-      href={`/authors/${author.id}`}
+      href={`/authors/${about.id}`}
       class={cn('block', isAuthorPage && 'pointer-events-none')}
     >
       <AvatarComponent
@@ -38,7 +38,7 @@ const socialLinks: SocialLink[] = [
         alt={`Avatar of ${name}`}
         fallback={name[0]}
         className={cn(
-          'size-32 rounded-md [&>[data-slot="avatar-fallback"]]:rounded-md',
+          'size-64 rounded-md [&>[data-slot="avatar-fallback"]]:rounded-md',
           !isAuthorPage &&
             'hover:ring-primary transition-shadow duration-300 hover:cursor-pointer hover:ring-2',
         )}

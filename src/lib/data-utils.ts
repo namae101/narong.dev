@@ -1,8 +1,8 @@
 import { getCollection, render, type CollectionEntry } from 'astro:content'
 import { readingTime, calculateWordCountFromHtml } from '@/lib/utils'
 
-export async function getAllAuthors(): Promise<CollectionEntry<'authors'>[]> {
-  return await getCollection('authors')
+export async function getAbout(): Promise<CollectionEntry<'about'>[]> {
+  return await getCollection('about')
 }
 
 export async function getAllPosts(): Promise<CollectionEntry<'blog'>[]> {
@@ -23,11 +23,7 @@ export async function getAllPostsAndSubposts(): Promise<
 
 export async function getAllProjects(): Promise<CollectionEntry<'projects'>[]> {
   const projects = await getCollection('projects')
-  return projects.sort((a, b) => {
-    const dateA = a.data.startDate?.getTime() || 0
-    const dateB = b.data.startDate?.getTime() || 0
-    return dateB - dateA
-  })
+  return projects
 }
 
 export async function getAllTags(): Promise<Map<string, number>> {
@@ -103,7 +99,7 @@ export async function getPostsByAuthor(
   authorId: string,
 ): Promise<CollectionEntry<'blog'>[]> {
   const posts = await getAllPosts()
-  return posts.filter((post) => post.data.authors?.includes(authorId))
+  return posts
 }
 
 export async function getPostsByTag(
@@ -194,7 +190,7 @@ export async function getParentPost(
 export async function parseAuthors(authorIds: string[] = []) {
   if (!authorIds.length) return []
 
-  const allAuthors = await getAllAuthors()
+  const allAuthors = await getAbout()
   const authorMap = new Map(allAuthors.map((author) => [author.id, author]))
 
   return authorIds.map((id) => {

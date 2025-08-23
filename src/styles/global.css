@@ -52,35 +52,37 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  /* Studio Ghibli Inspired Light Theme */
+  --background: #f7f3e8; /* Soft cream */
+  --foreground: #4b3f2a; /* Deep brown */
+  --primary: #7ba87a; /* Moss green */
+  --primary-foreground: #f7f3e8;
+  --secondary: #7da0b6; /* Muted blue */
+  --secondary-foreground: #f7f3e8;
+  --muted: #e2ded3; /* Gentle gray */
+  --muted-foreground: #7a7466;
+  --accent: #e6c97a; /* Warm gold */
+  --accent-foreground: #4b3f2a;
+  --destructive: #a87c6d; /* Warm brown */
+  --border: #b5a16a;
+  --ring: #7da0b6;
 }
 
 [data-theme='dark'] {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --ring: oklch(0.556 0 0);
+  /* Studio Ghibli Inspired Dark Theme */
+  --background: #2c3a2e; /* Deep forest green */
+  --foreground: #f7f3e8; /* Creamy white */
+  --primary: #7ba87a; /* Moss green */
+  --primary-foreground: #2c3a2e;
+  --secondary: #7da0b6; /* Muted blue */
+  --secondary-foreground: #2c3a2e;
+  --muted: #4b3f2a; /* Muted dark brown */
+  --muted-foreground: #e2ded3;
+  --accent: #e6c97a; /* Warm gold */
+  --accent-foreground: #2c3a2e;
+  --destructive: #a87c6d; /* Warm brown */
+  --border: #b5a16a;
+  --ring: #e6c97a;
 }
 
 @layer base {

@@ -1,0 +1,44 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import PageHead from '@/components/PageHead.astro'
+import ProjectCard from '@/components/ProjectCard.astro'
+import PaginationComponent from '@/components/ui/pagination'
+import { SITE } from '@/consts'
+import Layout from '@/layouts/Layout.astro'
+import { getAllProjects } from '@/lib/data-utils'
+import type { PaginateFunction } from 'astro'
+
+export async function getStaticPaths({
+  paginate,
+}: {
+  paginate: PaginateFunction
+}) {
+  const projects = await getAllProjects()
+  return paginate(projects, { pageSize: SITE.postsPerPage })
+}
+
+const { page } = Astro.props
+const allProjects = page.data
+console.log(allProjects)
+---
+
+<Layout class="max-w-3xl">
+  <PageHead slot="head" title="Projects" />
+  <Breadcrumbs
+    items={[
+      { label: 'Projects', href: '/projects', icon: 'lucide:package' },
+      { label: `Page ${page.currentPage}`, icon: 'lucide:book-copy' },
+    ]}
+  />
+
+  <div class="flex min-h-[calc(100vh-18rem)] flex-col gap-y-8">
+    {allProjects.map((project) => <ProjectCard project={project} />)}
+  </div>
+
+  <PaginationComponent
+    currentPage={page.currentPage}
+    totalPages={page.lastPage}
+    baseUrl="/projects/"
+    client:load
+  />
+</Layout>

@@ -17,8 +17,8 @@ export const NAV_LINKS: SocialLink[] = [
     label: 'blog',
   },
   {
-    href: '/authors',
-    label: 'authors',
+    href: '/projects',
+    label: 'projects',
   },
   {
     href: '/about',
@@ -28,15 +28,12 @@ export const NAV_LINKS: SocialLink[] = [
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    href: 'https://github.com/jktrn',
+    href: 'https://github.com/namae101',
     label: 'GitHub',
   },
+
   {
-    href: 'https://twitter.com/enscry',
-    label: 'Twitter',
-  },
-  {
-    href: 'mailto:jason@enscribe.dev',
+    href: 'mailto:me@narong.dev',
     label: 'Email',
   },
   {
