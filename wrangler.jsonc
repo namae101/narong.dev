@@ -1,0 +1,7 @@
+{
+    "name": "narong-dev",
+    "compatibility_date": "2025-09-03",
+    "assets" : {
+        "directory" : "./dist"
+    }
+}
