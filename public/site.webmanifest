@@ -1,6 +1,6 @@
 {
-  "name": "astro-erudite",
-  "short_name": "astro-erudite",
+  "name": "narong.dev",
+  "short_name": "narong.dev",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#000000",
+  "theme_color": "#f7f3e8",
+  "background_color": "#f7f3e8",
   "display": "standalone"
 }
